@@ -19,7 +19,7 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUp(_ sender: UIButton) {
-        print("user signs in")
+        print("user signs up")
         
         guard let email = emailTextView.text else {
             print("missing email")

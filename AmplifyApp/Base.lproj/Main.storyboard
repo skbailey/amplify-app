@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="KEe-Vt-hFL" kind="relationship" relationship="rootViewController" id="LEu-0Z-7IN"/>
+                        <segue destination="EJd-bJ-BG9" kind="relationship" relationship="rootViewController" id="7bc-0O-aHj"/>
                     </connections>
                 </navigationController>
             </objects>
@@ -96,10 +96,10 @@
                                         <rect key="frame" x="0.0" y="619" width="414" height="155"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzS-hs-s4q">
-                                                <rect key="frame" x="292.5" y="61" width="81.5" height="33"/>
+                                                <rect key="frame" x="278" y="0.0" width="96" height="37.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Sign Up">
-                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="signUp:" destination="KEe-Vt-hFL" eventType="touchUpInside" id="3rN-AT-4j4"/>
@@ -107,7 +107,7 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="uzS-hs-s4q" firstAttribute="centerY" secondItem="lvY-gt-gXz" secondAttribute="centerY" id="1Sw-Jt-ic0"/>
+                                            <constraint firstItem="uzS-hs-s4q" firstAttribute="top" secondItem="lvY-gt-gXz" secondAttribute="top" id="d2y-O9-5gP"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -138,12 +138,11 @@
                         <outlet property="emailTextView" destination="ee3-we-L4V" id="yZU-gX-jUa"/>
                         <outlet property="passwordConfirmationTextView" destination="zVg-qr-KLt" id="lG1-bF-evD"/>
                         <outlet property="passwordTextView" destination="FDW-C5-BuP" id="Bub-8J-Erg"/>
-                        <segue destination="EJd-bJ-BG9" kind="show" identifier="logIn" id="5aY-G2-R7u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oCK-R4-YlU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="984" y="82"/>
+            <point key="canvasLocation" x="1822" y="82"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="YZs-EF-7hX">
@@ -207,18 +206,50 @@
                                         <rect key="frame" x="0.0" y="619" width="414" height="155"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wiC-sL-WpV">
-                                                <rect key="frame" x="305" y="61" width="69" height="33"/>
+                                                <rect key="frame" x="294" y="0.0" width="80" height="37.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Log In">
-                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                 </buttonConfiguration>
                                                 <connections>
+                                                    <action selector="logIn:" destination="EJd-bJ-BG9" eventType="touchUpInside" id="dXF-09-Lpb"/>
                                                     <action selector="signUp:" destination="KEe-Vt-hFL" eventType="touchUpInside" id="w6a-wg-Lbs"/>
                                                 </connections>
                                             </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKN-JH-ygV">
+                                                <rect key="frame" x="107" y="105" width="200" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not a member?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyl-c9-hun">
+                                                        <rect key="frame" x="0.0" y="15" width="117.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkn-mb-yR0">
+                                                        <rect key="frame" x="118.5" y="9" width="81.5" height="33"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Sign Up">
+                                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <segue destination="KEe-Vt-hFL" kind="show" id="OjV-9T-aSJ"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="vyl-c9-hun" firstAttribute="leading" secondItem="sKN-JH-ygV" secondAttribute="leading" id="DqJ-Wg-li0"/>
+                                                    <constraint firstItem="vyl-c9-hun" firstAttribute="centerY" secondItem="sKN-JH-ygV" secondAttribute="centerY" id="Wse-Se-thH"/>
+                                                    <constraint firstAttribute="trailing" secondItem="pkn-mb-yR0" secondAttribute="trailing" id="Z5H-zs-IKv"/>
+                                                    <constraint firstAttribute="height" constant="50" id="gwf-fU-e4i"/>
+                                                    <constraint firstAttribute="width" constant="200" id="uL1-ea-BK4"/>
+                                                    <constraint firstItem="pkn-mb-yR0" firstAttribute="firstBaseline" secondItem="vyl-c9-hun" secondAttribute="firstBaseline" id="x1J-GK-Tu7"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="wiC-sL-WpV" firstAttribute="centerY" secondItem="bxh-5D-6RH" secondAttribute="centerY" id="yQf-t8-lQh"/>
+                                            <constraint firstAttribute="bottom" secondItem="sKN-JH-ygV" secondAttribute="bottom" id="dd0-zy-zI3"/>
+                                            <constraint firstItem="sKN-JH-ygV" firstAttribute="centerX" secondItem="bxh-5D-6RH" secondAttribute="centerX" id="l7H-jX-ZgB"/>
+                                            <constraint firstItem="wiC-sL-WpV" firstAttribute="top" secondItem="bxh-5D-6RH" secondAttribute="top" id="qB0-J0-F46"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -243,10 +274,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OWN-xo-xJd"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="dZg-uL-y16" id="Spq-gW-Uo3"/>
+                        <outlet property="passwordTextField" destination="iS5-oD-FYr" id="Ezm-Xx-hxk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kpr-ve-0wr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1868" y="82"/>
+            <point key="canvasLocation" x="900.00000000000011" y="81.696428571428569"/>
         </scene>
     </scenes>
     <resources>

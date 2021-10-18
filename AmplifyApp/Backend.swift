@@ -48,6 +48,8 @@ class Backend {
                 //print("==HUB== \(payload)")
                 break
             }
+            
+            print("HUB payload", payload)
         }
          
         // let's check if user is signedIn or not
@@ -80,6 +82,20 @@ class Backend {
                     print("SignUp Complete")
                 }
                 
+                completion()
+            case .failure(let error):
+                print("An error occurred while registering a user \(error)")
+            }
+        }
+    }
+    
+    public func login(email: String, password: String, completion: @escaping () -> Void) {
+        Amplify.Auth.signIn(username: email, password: password, options: nil) { result in
+            debugPrint(result)
+            
+            switch result {
+            case .success(let loginResult):
+                debugPrint(loginResult) 
                 completion()
             case .failure(let error):
                 print("An error occurred while registering a user \(error)")
