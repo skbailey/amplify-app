@@ -13,8 +13,6 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func logIn(_ sender: UIButton) {
@@ -32,6 +30,10 @@ class LogInViewController: UIViewController {
         
         Backend.shared.login(email: email, password: password) {
             print("Segue after login")
+            
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "authenticationSuccess", sender: self)
+            }
         }
     }
 }

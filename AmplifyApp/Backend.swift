@@ -9,11 +9,17 @@ import UIKit
 import Amplify
 import AWSCognitoAuthPlugin
 
+struct AuthMetadata {
+    var username: String?
+}
+
 class Backend {
     static let shared = Backend()
     static func initialize() -> Backend {
         return .shared
     }
+    
+    var authData = AuthMetadata()
     
     private init() {
       do {
@@ -51,19 +57,6 @@ class Backend {
             
             print("HUB payload", payload)
         }
-         
-        // let's check if user is signedIn or not
-         _ = Amplify.Auth.fetchAuthSession { (result) in
-             do {
-                 let session = try result.get()
-                        
-                 // let's update UserData and the UI
-                 self.updateUserData(withSignInStatus: session.isSignedIn)
-             } catch {
-                  print("Fetch auth session failed with error - \(error)")
-                  return
-            }
-        }
     }
     
     // MARK: - User Authentication
@@ -82,6 +75,7 @@ class Backend {
                     print("SignUp Complete")
                 }
                 
+                self.authData.username = email
                 completion()
             case .failure(let error):
                 print("An error occurred while registering a user \(error)")
@@ -89,16 +83,49 @@ class Backend {
         }
     }
     
+    public func confirmSignUp(with confirmationCode: String, completion: @escaping () -> Void) {
+        guard let username = self.authData.username else {
+            print("missing username")
+            return
+        }
+        
+        Amplify.Auth.confirmSignUp(for: username, confirmationCode: confirmationCode) { result in
+            switch result {
+            case .success:
+                print("Confirm signUp succeeded")
+                completion()
+            case .failure(let error):
+                print("An error occurred while confirming sign up \(error)")
+            }
+        }
+    }
+    
     public func login(email: String, password: String, completion: @escaping () -> Void) {
-        Amplify.Auth.signIn(username: email, password: password, options: nil) { result in
+        Amplify.Auth.signIn(username: email, password: password) { result in
             debugPrint(result)
             
             switch result {
             case .success(let loginResult):
-                debugPrint(loginResult) 
+                debugPrint(loginResult)
                 completion()
             case .failure(let error):
                 print("An error occurred while registering a user \(error)")
+            }
+        }
+    }
+    
+    public func fetchSession() {
+        // let's check if user is signedIn or not
+         Amplify.Auth.fetchAuthSession { (result) in
+             do {
+                 let session = try result.get()
+                        
+                 // let's update UserData and the UI
+                 print("is user signed in?", session.isSignedIn)
+                 self.updateUserData(withSignInStatus: session.isSignedIn)
+             } catch {
+                  print("Fetch auth session failed with error - \(error)")
+                  return
             }
         }
     }

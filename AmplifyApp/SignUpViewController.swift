@@ -33,7 +33,7 @@ class SignUpViewController: UIViewController {
         
         Backend.shared.signUp(email: email, password: password) {
             DispatchQueue.main.async() {
-                self.performSegue(withIdentifier: "logIn", sender: self)
+                self.performSegue(withIdentifier: "confirmUser", sender: self)
             }
         }
     }

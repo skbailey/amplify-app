@@ -23,6 +23,8 @@
 		D4A25BDE271BD9EC00BE61A1 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = D4A25BDD271BD9EC00BE61A1 /* awsconfiguration.json */; };
 		D4A25BE0271BFBDE00BE61A1 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A25BDF271BFBDE00BE61A1 /* SignUpViewController.swift */; };
 		D4A25BE2271CC0A900BE61A1 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A25BE1271CC0A900BE61A1 /* LogInViewController.swift */; };
+		D4A25BE4271D249C00BE61A1 /* UserConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A25BE3271D249C00BE61A1 /* UserConfirmationViewController.swift */; };
+		D4A25BE6271E78CB00BE61A1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A25BE5271E78CB00BE61A1 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		D4A25BDD271BD9EC00BE61A1 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		D4A25BDF271BFBDE00BE61A1 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D4A25BE1271CC0A900BE61A1 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		D4A25BE3271D249C00BE61A1 /* UserConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfirmationViewController.swift; sourceTree = "<group>"; };
+		D4A25BE5271E78CB00BE61A1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +98,9 @@
 				D423ADCF2713B4E60004B828 /* Backend.swift */,
 				D4A25BDF271BFBDE00BE61A1 /* SignUpViewController.swift */,
 				D4A25BE1271CC0A900BE61A1 /* LogInViewController.swift */,
+				D4A25BE3271D249C00BE61A1 /* UserConfirmationViewController.swift */,
 				D423ADB32713A6F50004B828 /* Main.storyboard */,
+				D4A25BE5271E78CB00BE61A1 /* HomeViewController.swift */,
 				D423ADB62713A6F70004B828 /* Assets.xcassets */,
 				D423ADB82713A6F70004B828 /* LaunchScreen.storyboard */,
 				D423ADBB2713A6F70004B828 /* Info.plist */,
@@ -196,8 +202,10 @@
 				D423ADD02713B4E60004B828 /* Backend.swift in Sources */,
 				D423ADAE2713A6F50004B828 /* AppDelegate.swift in Sources */,
 				D4A25BE2271CC0A900BE61A1 /* LogInViewController.swift in Sources */,
+				D4A25BE6271E78CB00BE61A1 /* HomeViewController.swift in Sources */,
 				D423ADD42713C0A90004B828 /* UserData.swift in Sources */,
 				D4A25BE0271BFBDE00BE61A1 /* SignUpViewController.swift in Sources */,
+				D4A25BE4271D249C00BE61A1 /* UserConfirmationViewController.swift in Sources */,
 				D423ADB02713A6F50004B828 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
